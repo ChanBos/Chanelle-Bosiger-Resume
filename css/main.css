@@ -1,0 +1,559 @@
+/* --- Navigation bar --- */
+/* I have set the margin, padding and border to 0 and changed the box-sizing to accomodate the navigation bar. */
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-sizing: border-box;
+}
+
+/* I have set the navigation bar to display as a grid and adijusted the columns accordingly. I implemented a box shadow and set the area the style and the colour. I have also set background colour and the size (height x width) of the navigation bar. */
+#navigation {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: #0F1960;
+    box-shadow: inset 0 0 30px black;
+    height: 100px;
+    width: 100%;
+}
+
+/* Set the size (height x width), the position to fixed, the top padding, the background colour and the transition time. Have also set the z-index so it displays "over" the page and set the top and left values. I have also hid the bottom scrollbar by setting overflow to hidden. */
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #0f1860c7;
+    box-shadow: inset 0 0 20px black;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+/* Set the side navigation link items to display as a block, added padding, set the transition duration and set the font's size, weight and set the text decoration as none so that the links are shown as plain text. */
+.sidenav a {
+    display: block;
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 500;
+    color: #ffffff;
+    transition: 0.3s;
+    margin-left: -6px;
+}
+
+/* Set the links in the side navigation to chnage colour once hovered over. */
+.sidenav a:hover {
+    color: #E244B0;
+}
+
+/* Set the position, the margins and the font size of the side navigations close button. */
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+/* Implemented a media query to make the side navigation adaptable for other screen sizes. */
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+    /* I have adjusted the font size of the link list items of the sidenav. */
+    .sidenav a {
+        font-size: 18px;
+    }
+}
+
+/* Set the hamburger menu item's margins, font size, font colour and changed the cursor to a pointer once it is hovered over. */
+#hamburger {
+    margin-left: 80px;
+    margin-top: 30px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #ffffff;
+}
+
+/* Set for the font colour to change once hovered over. */
+#hamburger:hover {
+    color: #E244B0;
+}
+
+/* Set the search bar's margin, padding, background colour and also to float to the right. */
+#search_bar {
+    margin-top: 5px;
+    margin-left: 125px;
+    float: right;
+    background-color: transparent;
+    padding-left: 0px;
+}
+
+/* Set the search bar's input area and the search button's margins, padding, set the corner's border radius and set the font size. */
+#search_bar input,
+#search_bar button {
+    margin-top: 30px;
+    padding: 5px;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+/* Set the search button's size (height x width), the font colour, the background as transparent and set the border style and box-shadow to nothing. I have also changed the cursor to a pointer once it is hovered over.*/
+#search_bar button {
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    border-style: none;
+    box-shadow: none;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+/* Set for the font colour to change once hovered over. */
+#search_bar button:hover {
+    color: #E244B0;
+}
+
+/* Adjusted the size (height x width) and the margins of the logo to fit nicely at the center of the navigation bar. */
+#logo {
+    height: 90px;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+}
+
+/* --- Base styles --- */
+/* I have set the text properties (size, family and colour), the background colour and the size (height and width). */
+body {
+    height: auto;
+    width: 100%;
+    background: #ffffff;
+    color: #000000;
+    font-family: "Helvetica", "Arial";
+    font-size: 0.9rem;
+}
+
+/* --- Customized text elements --- */
+/* Set the left margin and the text alignment and decoration (none). */
+h1 {
+    margin-left: 150px;
+    text-align: center;
+    text-decoration: underline;
+}
+
+/* Set the line height, the bottom margin and the text decoration (none). */
+h2 {
+    line-height: 30px;
+    margin-bottom: 10px;
+    text-decoration: underline;
+}
+
+/* Set the h4 header to display in italics. */
+h4 {
+    font-style: italic;
+}
+
+/* Set the size (height x width), the margins, the opacity and for the paragraphs to float to the right. Also set the text properties (alignment, size, style and the line height). */
+.aboutp,
+.projectp {
+    float: right;
+    height: auto;
+    width: 600px;
+    margin-top: 25px;
+    margin-right: 55px;
+    text-align: center;
+    font-size: 16px;
+    font-style: italic;
+    line-height: 1.25rem;
+    opacity: 80%;
+}
+
+/* Overrided the previous width and top margin of the project section paragraph. */
+.projectp {
+    margin-top: 27px;
+    width: 350px;
+}
+
+.fa-circle {
+    font-size: 2px;
+}
+
+/* --- Customized table --- */
+/* Set the margins and the border (colour, style and size) of the table. */
+table {
+    margin: 15px auto 15px auto;
+}
+
+#detailstable {
+    margin: 0px;
+}
+
+/* Set the padding of the cells and aligned the ext to the top. */
+th,
+td {
+    padding: 10px;
+    vertical-align: text-top;
+}
+
+/* Set the size (height x width) and the font size of the skills icons. */
+.fab,
+.far,
+.fas {
+    height: auto;
+    width: 20px;
+    font-size: 1.25rem;
+}
+
+/* Set for the font weight and colour to change once hovered over. */
+.skilllisting:hover {
+    color: #E244B0;
+    font-weight: bold;
+}
+
+/* Set the left margin for the details table. Also set the text alignment to left. */
+#detailstable {
+    margin-left: -13px;
+    text-align: left;
+}
+
+/* --- Customized form --- */
+/* Set the size (height x width), the padding, the text colour and weight, the background colour and implemented a box-shadow (styled, sized and coloured). */
+form {
+    display: block;
+    background-color: #0F1960;
+    box-shadow: inset 0 0 30px #000000;
+    height: 520px;
+    width: 100%;
+    padding: 20px;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+/* Set the size (height x width), the margins and for the labels to float left. */
+label {
+    float: left;
+    height: 35px;
+    width: 30%;
+    margin-top: 8px;
+    margin-right: 10px;
+}
+
+/* Set the size (height x width), the padding, the background colour, the text colour, the bottom margin and for the input sections to float right. Also added a border (styled, coloured, sized and radius set). */
+.cfsubmfield {
+    float: left;
+    width: 60%;
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    height: 35px;
+    /* width: 250px; */
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+/* Increased the size (height x width) of the message input. */
+#message {
+    height: 200px;
+    width: 300px;
+}
+
+/* Set the left margin for the skills table. */
+#computerskills,
+#otherskills {
+    margin-left: -10px;
+}
+
+/* --- Customized image elements --- */
+/* Set the background colour, the size (height x width) of the "About Me" image. */
+#animatedintro {
+    width: 600px;
+    height: auto;
+    background-color: #0F1960;
+}
+
+/* Set the background colour, the margins for the skills image. */
+#skillscompetencies {
+    margin-top: 15px;
+    margin-bottom: auto;
+    background-color: #0F1960;
+}
+
+/* Set the background colour, the margins for the education image. */
+#education {
+    margin-top: 85px;
+    margin-bottom: auto;
+    background-color: #0F1960;
+}
+
+/* Set the background colour, the margins for the work experience image. */
+#experience {
+    margin-top: 55px;
+    margin-bottom: auto;
+    background-color: #0F1960;
+}
+
+/* Set the background colour, the size (height x width) of the screenshots. */
+.screenshot {
+    height: 160px;
+    width: auto;
+    background-color: #0F1960;
+}
+
+/* Set the background colour, the margins for the contact image. */
+#contact {
+    margin-bottom: 90px;
+    background-color: #0F1960;
+}
+
+/* Set the background colour, the size (height x width) of the section images. */
+.sectionpic {
+    height: 337px;
+    background-color: #0F1960;
+}
+
+/* --- Box customization --- */
+/* Set the size (height x width), padding, the left margin, the line height and for the containers to display as an inline-block. Also added a bottom border and set the colour, the size and the style. */
+.container {
+    display: inline-block;
+    height: auto;
+    width: 98%;
+    padding: 10px 0px 10px 10px;
+    line-height: 1rem;
+    margin-left: 20px;
+    border-bottom: 2px solid #5a5a5a86;
+}
+
+/* Set the sections to display as a grid and set the frames. */
+.section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+/* Set the size (height x width) of the box that take up the first half of the page width and floated them to the left. */
+.boxHalf1 {
+    float: left;
+    height: auto;
+    width: 29%;
+}
+
+/* Set the size (height x width) and margins of the box that take up the second half of the page width and floated them to the left. */
+.boxHalf2 {
+    margin-top: 15px;
+    margin-left: 40px;
+    float: left;
+    height: auto;
+    width: 67%;
+}
+
+/* Set the size (height x width) of the boxes that take up a third of the page width and floated them to the left. */
+.boxThird {
+    float: left;
+    height: auto;
+    width: 36%;
+}
+
+/* Set the size (height x width) of the image box to display as a block and to float to the left. */
+.imagebox {
+    display: block;
+    float: left;
+    height: auto;
+    width: 25%;
+}
+
+/* Set the left margin, the size (height x width), the line height and for the sections to display as blocks. */
+#skillscomp,
+#oskills,
+#suppcoursescert,
+#maineducation,
+#workexperience,
+#parttimevoluntary,
+#projectps,
+#pscreenshot,
+#details,
+#cfsubm {
+    display: block;
+    margin-left: 40px;
+    height: auto;
+    width: 430px;
+    line-height: 30px;
+}
+
+/* Set the left margin for the details section. */
+#details {
+    margin-left: 40px;
+}
+
+/* Set the right margin for the contact form submission section. */
+#cfsubm {
+    margin-right: 20px;
+}
+
+/* Set the margins for the skills section. */
+#skillscomp,
+#oskills {
+    margin-left: 0px;
+    margin-right: 40px;
+}
+
+/* Set the margins for the projects section and set the content to float to the left. */
+#pscreenshot,
+#projectps {
+    float: left;
+    margin-left: 50px;
+    margin-right: -20px;
+}
+
+/* --- Button styling --- */
+/* Set the text colour, changed the decoration to none, set the background colour and padding. Also added a border and box-shadow, setting the style, colour, size and corner radius. */
+button,
+#academic {
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border: 1px solid black;
+    border-radius: 2px;
+    background-color: #3F2677;
+    color: white;
+    box-shadow: inset 0 0 10px black;
+    text-decoration: none;
+}
+
+/* Set size (height x width), the padding, the text alignment and size. From paragraph. Replicating button. */
+#academic {
+    height: auto;
+    width: 225px;
+    text-align: center;
+    font-size: 0.8rem;
+    padding: 2px 3px 2px 3px;
+}
+
+/* Set for the font colour to change once hovered over. */
+#academic:hover {
+    color: #E244B0;
+}
+
+/* Set for the font colour to change once hovered over. */
+button:hover {
+    color: #E244B0;
+}
+
+/* Set the right margin for the submit button. */
+#submitbutton {
+    margin-right: 50px;
+}
+
+/* Set the top margin and the font size and color. */
+.fa-caret-square-up {
+    font-size: 2.5rem;
+    color: #0F1960;
+    margin-top: 53px;
+}
+
+/* Set for the font colour to change once hovered over. */
+.fa-caret-square-up:hover {
+    color: #E244B0;
+}
+
+/* --- Modal styling --- */
+/* Set the display to none (hidden) and the position to fixed, the margins, the background colours, the size (height x width), the overflow to auto on scroll and changed the z-index so that the modal appears over the rest of the contents. */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Set the modal's padding, margins, background colour, width and added a border (styled, coloured and sized). */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 800px;
+    /* Could be more or less, depending on screen size */
+}
+
+/* Set the padding, the background colour and the text colour of the modal's header. */
+.modal-header {
+    padding: 20px;
+    background-color: #0F1960;
+    color: #ffffff;
+}
+
+/* Set the close button's colour, size and weight. Also set it to float to the right. */
+.close {
+    color: #ffffff;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/* Set for the text colour, and the cursor to change if hovered over. Also set the text decoration to none. */
+.close:hover {
+    color: #E244B0;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Set the left margin of the list. */
+ul {
+    margin-left: 40px;
+}
+
+/* Set the line height of the modal's list items. */
+li {
+    line-height: 1.25rem;
+}
+
+/* --- Customized the footer of the page. --- */
+/* I have set the navigation bar to display as a grid and adjusted the columns accordingly. I implemented a box shadow and set the area the style and the colour. I have also set the margins, the padding, background colour and the size (height x width) of the footer. */
+footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0px;
+    background-color: #0F1960;
+    box-shadow: inset 0 0 30px black;
+    padding: 5px;
+}
+
+/* Changed the text colour, the size (height x width) and margins of the footer's paragraph. I also floated the paragraph to the left. */
+#footerp {
+    height: auto;
+    width: 700px;
+    float: left;
+    color: #ffffff;
+    margin-top: 35px;
+    margin-left: 20px;
+}
+
+/* Set the colour of the footer link and set for the link to as plain text. */
+footer a {
+    text-decoration: none;
+    color: #007FFF;
+}
+
+/* Set the profile images' margins and size (height x width). I also floated the paragraph to the right. */
+.profilelink {
+    margin-top: 15px;
+    margin-right: 20px;
+    float: right;
+    height: 50px;
+    width: auto;
+}
